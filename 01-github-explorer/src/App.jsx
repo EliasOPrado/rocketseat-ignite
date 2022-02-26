@@ -1,5 +1,9 @@
-import './styles/global.css'
+import './styles/global.scss'
+import './components/RepositoryList.jsx'
+import { RepositoryList } from './components/RepositoryList.jsx'
 
 export function App(){
-    return <h1>Hello World! check</h1>
+    return (
+    <RepositoryList/>
+    )
 }
