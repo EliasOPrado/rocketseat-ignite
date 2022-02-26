@@ -1,3 +1,5 @@
+import './styles/global.css'
+
 export function App(){
-    return <h1>Hello World 2</h1>
+    return <h1>Hello World! check</h1>
 }
