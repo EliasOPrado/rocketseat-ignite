@@ -1,6 +1,6 @@
 import "./styles/global.scss";
-import "./components/RepositoryList.jsx";
-import { RepositoryList } from "./components/RepositoryList.jsx";
+import "./components/RepositoryList.tsx";
+import { RepositoryList } from "./components/RepositoryList";
 
 export function App() {
   return (
