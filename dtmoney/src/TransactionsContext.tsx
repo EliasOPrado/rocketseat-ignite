@@ -1,32 +1,51 @@
-import {createContext, useState, useEffect, ReactNode} from 'react'
-import { api } from './services/api';
+import { createContext, useState, useEffect, ReactNode } from "react";
+import { api } from "./services/api";
 
 interface Transaction {
-    id: number;
-    title: string;
-    amount: number;
-    type: string;
-    category: string;
-    createdAt: string;
-  }
-
-interface TransactionProviderProps {
-    children: ReactNode;
+  id: number;
+  title: string;
+  amount: number;
+  type: string;
+  category: string;
+  createdAt: string;
 }
 
-export const TransactionContext = createContext<Transaction[]>([]);
+interface TransactionInput {
+  title: string;
+  amount: number;
+  type: string;
+  category: string;
+}
 
-export function TransactionsProvider({children}: TransactionProviderProps) {
-    const [transactions, setTransactions] = useState<Transaction[]>([]);
+interface TransactionProviderProps {
+  children: ReactNode;
+}
 
-    useEffect(() => {
-      api.get("transactions")
-        .then((response) => setTransactions(response.data.transactions));
-    }, []);
+interface TransactionContextData {
+  transactions: Transaction[];
+  createTransaction: (transaction: TransactionInput) => void;
+}
 
-    return (
-        <TransactionContext.Provider value={transactions}>
-            {children}
-        </TransactionContext.Provider>
-    )
+export const TransactionContext = createContext<TransactionContextData>(
+  {} as TransactionContextData
+);
+
+export function TransactionsProvider({ children }: TransactionProviderProps) {
+  const [transactions, setTransactions] = useState<Transaction[]>([]);
+
+  useEffect(() => {
+    api
+      .get("transactions")
+      .then((response) => setTransactions(response.data.transactions));
+  }, []);
+
+  function createTransaction(transaction: TransactionInput) {
+    api.post("/transactions", transaction);
+  }
+
+  return (
+    <TransactionContext.Provider value={{ transactions, createTransaction }}>
+      {children}
+    </TransactionContext.Provider>
+  );
 }

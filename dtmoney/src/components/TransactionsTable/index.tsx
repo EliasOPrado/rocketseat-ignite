@@ -4,8 +4,8 @@ import { TransactionContext } from '../../TransactionsContext';
 
 
 export function TransactionsTable() {
-  const transactions = React.useContext(TransactionContext)
-  
+  const {transactions} = React.useContext(TransactionContext)
+
   return (
     <Container>
       <table>
