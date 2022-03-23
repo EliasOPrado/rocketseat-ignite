@@ -4,7 +4,7 @@ import { Dashboard } from "./components/Dashboard";
 import Modal from "react-modal";
 import { GlobalStyle } from "./styles/globals";
 import NewTransactionModal from "./components/NewTransactionModal/index";
-import {TransactionContext} from './TransactionsContext'
+import { TransactionsProvider } from './TransactionsContext';
 // block root element to be interacted.
 Modal.setAppElement("#root");
 
@@ -19,14 +19,15 @@ export function App() {
     setIsNewTransactionModalOpen(false);
   }
   return (
-    <TransactionContext.Provider value={[]}>
-      <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
-      <Dashboard />
+    <TransactionsProvider>
+      <Header onOpenNewTransactionModal={handleOpenNewTransactionModal}/>
+      <Dashboard/>
+
       <NewTransactionModal
         isOpen={isNewTransactionModalOpen}
         onRequestClose={handleCloseNewTransactionModal}
       />
-      <GlobalStyle />
-    </TransactionContext.Provider>
+      <GlobalStyle/>
+    </TransactionsProvider>
   );
 }
