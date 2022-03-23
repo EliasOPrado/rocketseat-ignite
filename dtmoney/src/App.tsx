@@ -4,7 +4,7 @@ import { Dashboard } from "./components/Dashboard";
 import Modal from "react-modal";
 import { GlobalStyle } from "./styles/globals";
 import NewTransactionModal from "./components/NewTransactionModal/index";
-import { TransactionsProvider } from './TransactionsContext';
+import { TransactionsProvider } from './hooks/useTransactions';
 // block root element to be interacted.
 Modal.setAppElement("#root");
 
