@@ -25,5 +25,7 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "target":"esnext",
+  "moduleResolution":"node"
 }
