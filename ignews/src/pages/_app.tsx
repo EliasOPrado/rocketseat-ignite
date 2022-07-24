@@ -6,7 +6,6 @@ import { Provider as NextAuthProvider } from 'next-auth/client';
 import '../styles/global.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  console.log(Component)
   return (
     <NextAuthProvider session={pageProps.session} >
       <Header />
