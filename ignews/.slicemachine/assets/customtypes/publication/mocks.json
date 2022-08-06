@@ -1,0 +1,29 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "publication",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "title": [
+      {
+        "type": "paragraph",
+        "text": "Officia anim cupidatat consequat consectetur incididunt ullamco irure.",
+        "spans": []
+      }
+    ],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Sunt do est amet laborum Lorem aliquip reprehenderit consectetur cillum reprehenderit cillum quis qui adipisicing incididunt. Aute proident non culpa reprehenderit. Aute in minim est do nisi ullamco aliquip ea ipsum occaecat nulla mollit.",
+        "spans": []
+      }
+    ]
+  }
+}
