@@ -15,6 +15,7 @@ Also, when getting the info from prismic you need to (1)fetch the data,
 (4) create type Post, and (5) set the props to the Post(function) from step (3).
 ***** ------------- ******
 */
+
 type Post = {
   slug: string;
   title: string;
